@@ -1,0 +1,30 @@
+RUTA DE TESTING PARA CONTROLADORES 
+
+* Método get:
+  1. Probar que retorne todos los valores de la base de datos con la estructura adecuada.
+  2. Si tiene parámetros, probar todas los tipos de parámetros incluso saliendo del "ámbito".
+
+* Método create:
+  1. Probarlo satisfactoriamente.
+  2. Probarlo con un formato de body inválido.
+  3. Probarlo con atributos unique repetidos.
+  4. Probarlo con tipos de atributo inválidos.
+  5. Probarlo con claves foráneas que no existen.
+  6. Probarlo con atributos que tengan conflictos entre ellos (fecha inicio y fecha fin p.ej)
+
+* Método delete:
+  1. Probarlo con un ID que exista.
+  2. Probarlo con un ID que no exista.
+  3. Probarlo sin ID.
+  4. Probarlo con formato de ID inválido.
+
+* Método update:
+  1. Probarlo de forma satisfactoria. 
+  2. Con un id que no existe.
+  3. Con un atributo unique repetido.
+  4. Con un formato de body inválido.
+  5. Probarlo con tipos de atributo inválidos.
+  6. Probarlo con claves foráneas que no existen.
+  7. Probarlo con un body que no actualice nada
+  8. Probarlo con atributos que tengan conflictos entre ellos (fecha inicio y fecha fin p.ej)
+
