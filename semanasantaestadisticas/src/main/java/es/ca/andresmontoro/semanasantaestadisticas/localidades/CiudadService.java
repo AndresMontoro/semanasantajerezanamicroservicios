@@ -11,12 +11,12 @@ import reactor.core.publisher.Mono;
 @AllArgsConstructor
 public class CiudadService {
 
-  private final WebClient webClient;
+  private final WebClient.Builder webClientBuilder;
 
   public Mono<CiudadResponse> getCiudadByName(String nombreCiudad) {
-    return webClient.get()
+    return webClientBuilder.build().get()
       .uri(
-        "http://localhost:8080/api/v1/ciudad/findByName",
+        "http://semanasanta-information/api/v1/ciudad/findByName",
         uriBuilder -> uriBuilder.queryParam("nombre", nombreCiudad).build()
       )
       .retrieve()

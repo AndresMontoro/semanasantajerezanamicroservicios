@@ -11,11 +11,11 @@ import reactor.core.publisher.Mono;
 @Service
 @AllArgsConstructor
 public class BandaService {
-  private final WebClient webClient;
+  private final WebClient.Builder webClientBuilder;
 
   public List<BandaResponse> getBandasByCiudad(Long ciudadId) {
-    List<BandaResponse> bandas = webClient.get()
-      .uri("http://localhost:8080/api/v1/banda/ciudad/{ciudadId}", ciudadId)
+    List<BandaResponse> bandas = webClientBuilder.build().get()
+      .uri("http://semanasanta-information/api/v1/banda/ciudad/{ciudadId}", ciudadId)
       .retrieve()
       .bodyToFlux(BandaResponse.class)
       .collectList()
@@ -25,8 +25,8 @@ public class BandaService {
   }
 
   public Mono<BandaResponse> getBandaById(Long commonBandaId) {
-    return webClient.get()
-      .uri("http://localhost:8080/api/v1/banda/{bandaId}", commonBandaId)
+    return webClientBuilder.build().get()
+      .uri("http://semanasanta-information/api/v1/banda/{bandaId}", commonBandaId)
       .retrieve()
       .bodyToMono(BandaResponse.class);
   }

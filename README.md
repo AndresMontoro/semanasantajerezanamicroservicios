@@ -24,10 +24,10 @@ API sobre la Semana Santa jerezana desarrollada en una arquitectura de microserv
 
 ## API Reference
 
-#### Get all items
+#### Bandas
 
 ```http
-  GET /api/items
+  GET /api/v1/banda
 ```
 
 | Parameter | Type     | Description                |

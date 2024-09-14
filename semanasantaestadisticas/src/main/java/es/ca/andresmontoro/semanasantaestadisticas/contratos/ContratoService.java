@@ -16,12 +16,12 @@ import reactor.core.publisher.Flux;
 public class ContratoService {
 
   @Autowired
-  private WebClient webClient;
+  private WebClient.Builder webClientBuilder;
 
   public Flux<ContratoResponse> getContratosOnYearCiudad(Year year, CiudadResponse ciudad) {
-    return webClient.get()
+    return webClientBuilder.build().get()
       .uri(
-        "http://localhost:8080/api/v1/contrato/annioCiudad",
+        "http://semanasanta-information/api/v1/contrato/annioCiudad",
         uriBuilder -> uriBuilder
           .queryParam("annio", year.getValue())
           .queryParam("idCiudad", ciudad.getId())
@@ -36,9 +36,9 @@ public class ContratoService {
   }
 
   public Flux<ContratoResponse> getContratosOnYear(Year year) {
-    return webClient.get()
+    return webClientBuilder.build().get()
       .uri(
-        "http://localhost:8080/api/v1/contrato/annio/{year}", year.getValue()
+        "http://semanasanta-information/api/v1/contrato/annio/{year}", year.getValue()
       )
       .retrieve()
       .onStatus(
