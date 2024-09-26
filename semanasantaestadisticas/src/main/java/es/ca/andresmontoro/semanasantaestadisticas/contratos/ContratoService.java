@@ -21,7 +21,7 @@ public class ContratoService {
   public Flux<ContratoResponse> getContratosOnYearCiudad(Year year, CiudadResponse ciudad) {
     return webClientBuilder.build().get()
       .uri(
-        "http://semanasanta-information/api/v1/contrato/annioCiudad",
+        "http://semanasanta-information/ssjerezana/informacion/contrato/annioCiudad",
         uriBuilder -> uriBuilder
           .queryParam("annio", year.getValue())
           .queryParam("idCiudad", ciudad.getId())
@@ -38,7 +38,7 @@ public class ContratoService {
   public Flux<ContratoResponse> getContratosOnYear(Year year) {
     return webClientBuilder.build().get()
       .uri(
-        "http://semanasanta-information/api/v1/contrato/annio/{year}", year.getValue()
+        "http://semanasanta-information/ssjerezana/informacion/contrato/annio/{year}", year.getValue()
       )
       .retrieve()
       .onStatus(

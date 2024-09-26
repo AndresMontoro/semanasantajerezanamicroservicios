@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 import reactor.core.publisher.Flux;
 
 @RestController
-@RequestMapping("/api/estadisticas/bandas")
+@RequestMapping("/ssjerezana/estadisticas/bandas")
 @AllArgsConstructor
 public class EstadisticasBandasController {
 

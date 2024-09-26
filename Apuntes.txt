@@ -1,0 +1,18 @@
+Crear un servidor Eureka con las siguientes opciones.
+
+Comando:
+  docker run -p 8181:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:25.0.6 start-dev
+  andres@AsusTUF:/opt/keycloack$ bin/kc.sh start-dev --http-port=8181
+  
+1. Crear un Realm llamado spring-boot-microservices-realm
+2. Crear un Client con las siguientes opciones:
+  1. Nombre: spring-cloud-client
+  2. Quitamos Standard flow y Direct Access Grant y activamos Client Authorization y Service Account Roles.
+  3. Guardamos el cliente y vemos el Secret en Credentials.
+
+3. El Secret nos servirá para solicitar un Token con Postman
+  1. Poner en el campo Access Token Url el token_endpoint.
+  2. Client Id = spring-cloud-client
+  3. Client Secret = Secret
+  4. Credentials As Basic Auth Header (default)
+  5. Solicitar Token y hacer solicitud a la API

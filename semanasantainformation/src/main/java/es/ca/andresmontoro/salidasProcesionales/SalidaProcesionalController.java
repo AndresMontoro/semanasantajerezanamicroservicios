@@ -19,7 +19,7 @@ import jakarta.validation.Valid;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/api/v1/salidaProcesional")
+@RequestMapping("/ssjerezana/informacion/salidaProcesional")
 public class SalidaProcesionalController implements CrudController<SalidaProcesional, SalidaProcesionalDTO> {
 
   private final SalidaProcesionalService salidaProcesionalService;

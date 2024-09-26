@@ -1,11 +1,11 @@
-package es.ca.andresmontoro;
+package es.ca.andresmontoro.apigateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SsjerezApplication {
+public class ApigatewayApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(SsjerezApplication.class, args);
+		SpringApplication.run(ApigatewayApplication.class, args);
 	}
 }

@@ -1,0 +1,46 @@
+server:
+  error:
+    include-message: always
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:password@localhost:8761/eureka
+
+spring:
+  application:
+    name: apigateway
+  cloud:
+    gateway:
+      routes:
+        - id: semanasanta-information
+          uri: lb://semanasanta-information
+          predicates:
+            - Path=/ssjerezana/informacion/**
+
+        - id: semanasanta-estadisticas
+          uri: lb://semanasanta-estadisticas
+          predicates:
+            - Path=/ssjerezana/estadisticas/**
+
+  # Configuration of API Gateway as a resource server
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # Says where is located the authorization server
+          issuer-uri: http://localhost:8181/realms/spring-boot-microservices-realm
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        cloud:
+          gateway:
+            TRACE:
+              route:
+                RouteDefinitionRouteLocator: INFO
+          
+          

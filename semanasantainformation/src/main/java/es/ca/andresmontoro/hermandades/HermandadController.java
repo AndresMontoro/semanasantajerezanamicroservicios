@@ -19,7 +19,7 @@ import jakarta.validation.Valid;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/api/v1/hermandad")
+@RequestMapping("/ssjerezana/informacion/hermandad")
 
 public class HermandadController implements CrudController<Hermandad, Hermandad> {
   private final HermandadService hermandadService;

@@ -15,7 +15,7 @@ public class BandaService {
 
   public List<BandaResponse> getBandasByCiudad(Long ciudadId) {
     List<BandaResponse> bandas = webClientBuilder.build().get()
-      .uri("http://semanasanta-information/api/v1/banda/ciudad/{ciudadId}", ciudadId)
+      .uri("http://semanasanta-information/ssjerezana/informacion/banda/ciudad/{ciudadId}", ciudadId)
       .retrieve()
       .bodyToFlux(BandaResponse.class)
       .collectList()
@@ -26,7 +26,7 @@ public class BandaService {
 
   public Mono<BandaResponse> getBandaById(Long commonBandaId) {
     return webClientBuilder.build().get()
-      .uri("http://semanasanta-information/api/v1/banda/{bandaId}", commonBandaId)
+      .uri("http://semanasanta-information/ssjerezana/informacion/banda/{bandaId}", commonBandaId)
       .retrieve()
       .bodyToMono(BandaResponse.class);
   }

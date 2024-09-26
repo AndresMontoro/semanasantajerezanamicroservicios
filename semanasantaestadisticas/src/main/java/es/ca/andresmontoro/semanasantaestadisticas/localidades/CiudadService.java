@@ -16,7 +16,7 @@ public class CiudadService {
   public Mono<CiudadResponse> getCiudadByName(String nombreCiudad) {
     return webClientBuilder.build().get()
       .uri(
-        "http://semanasanta-information/api/v1/ciudad/findByName",
+        "http://semanasanta-information/ssjerezana/informacion/ciudad/findByName",
         uriBuilder -> uriBuilder.queryParam("nombre", nombreCiudad).build()
       )
       .retrieve()

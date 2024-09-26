@@ -27,4 +27,9 @@ RUTA DE TESTING PARA CONTROLADORES
   6. Probarlo con claves foráneas que no existen.
   7. Probarlo con un body que no actualice nada
   8. Probarlo con atributos que tengan conflictos entre ellos (fecha inicio y fecha fin p.ej)
+  
+  
+ALGUNOS COMANDOS NECESARIOS
+  - Arrancar servidor Keycloack en el directorio /opt/keycloack
+    ./kc.sh start-dev --http-port=8180
 

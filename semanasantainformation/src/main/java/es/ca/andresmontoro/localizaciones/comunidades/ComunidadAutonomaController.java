@@ -17,7 +17,7 @@ import jakarta.validation.Valid;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/api/v1/comunidad-autonoma")
+@RequestMapping("/ssjerezana/informacion/comunidad-autonoma")
 public class ComunidadAutonomaController implements CrudController<ComunidadAutonoma, ComunidadAutonoma> {
   private final ComunidadAutonomaService comunidadAutonomaService;
 

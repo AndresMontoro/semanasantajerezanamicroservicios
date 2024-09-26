@@ -19,7 +19,7 @@ import es.ca.andresmontoro.CrudController;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/api/v1/provincia")
+@RequestMapping("/ssjerezana/informacion/provincia")
 public class ProvinciaController implements CrudController<ProvinciaResponse, ProvinciaDTO> {
   private final ProvinciaService provinciaService;
 

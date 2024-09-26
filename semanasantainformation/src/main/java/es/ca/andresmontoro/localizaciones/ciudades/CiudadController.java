@@ -21,7 +21,7 @@ import jakarta.validation.Valid;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/api/v1/ciudad")
+@RequestMapping("/ssjerezana/informacion/ciudad")
 public class CiudadController implements CrudController<CiudadResponse, CiudadDTO> {
   private final CiudadService ciudadService;
 

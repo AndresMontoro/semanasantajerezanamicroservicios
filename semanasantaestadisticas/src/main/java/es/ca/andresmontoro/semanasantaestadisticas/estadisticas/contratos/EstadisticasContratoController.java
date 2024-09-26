@@ -10,7 +10,7 @@ import lombok.AllArgsConstructor;
 import reactor.core.publisher.Flux;
 
 @RestController
-@RequestMapping("/api/estadisticas/contratos")
+@RequestMapping("/ssjerezana/estadisticas/contratos")
 @AllArgsConstructor
 public class EstadisticasContratoController {
   

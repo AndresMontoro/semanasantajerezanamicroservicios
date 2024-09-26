@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
-public class EstadisticasCiudades {
+public class EstadisticasCiudadesService {
   
   private final ContratoService contratoService;
   private final BandaService bandaService;
