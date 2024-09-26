@@ -11,6 +11,7 @@ eureka:
 spring:
   application:
     name: apigateway
+  
   cloud:
     gateway:
       routes:
@@ -31,6 +32,13 @@ spring:
         jwt:
           # Says where is located the authorization server
           issuer-uri: http://localhost:8181/realms/spring-boot-microservices-realm
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    urls: 
+      - name: semanasanta-information
+        url: /agreggate/semanasanta-information/v3/api-docs
 
 logging:
   level:

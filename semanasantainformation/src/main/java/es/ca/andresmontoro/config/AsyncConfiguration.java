@@ -1,4 +1,4 @@
-package es.ca.andresmontoro;
+package es.ca.andresmontoro.config;
 
 import java.util.concurrent.Executor;
 
