@@ -12,11 +12,14 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @EnableWebFluxSecurity
 public class SecurityConfig {
 
+  private final String[] whiteListedEndPoints = {"/swagger-ui.html", "swagger-ui/**", 
+    "/v3/api-docs/**", "/api-docs/**", "/aggregate/**", "/eureka/**"};
+
   @Bean
   public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
     serverHttpSecurity.csrf(ServerHttpSecurity.CsrfSpec::disable)
       .authorizeExchange(exchange -> 
-        exchange.pathMatchers("/eureka/**")
+        exchange.pathMatchers(whiteListedEndPoints)
           .permitAll()
           .anyExchange()
           .authenticated()

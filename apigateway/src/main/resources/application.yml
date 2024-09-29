@@ -35,10 +35,11 @@ spring:
 
 springdoc:
   swagger-ui:
-    path: /swagger-ui.html
     urls: 
       - name: semanasanta-information
-        url: /agreggate/semanasanta-information/v3/api-docs
+        url: /aggregate/semanasanta-information/v3/api-docs
+      - name: semanasanta-estadisticas
+        url: /aggregate/semanasanta-estadisticas/v3/api-docs
 
 logging:
   level:
