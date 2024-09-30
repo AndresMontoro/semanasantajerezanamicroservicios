@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: semanasantaeventos
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: update
+        show-sql: true
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/semanasantaeventos
+    username: postgres
+    password: postgres
