@@ -31,7 +31,7 @@ spring:
       resourceserver:
         jwt:
           # Says where is located the authorization server
-          issuer-uri: http://localhost:8181/realms/spring-boot-microservices-realm
+          issuer-uri: http://localhost:8181/realms/semana-santa-microservices-realm
 
 springdoc:
   swagger-ui:
