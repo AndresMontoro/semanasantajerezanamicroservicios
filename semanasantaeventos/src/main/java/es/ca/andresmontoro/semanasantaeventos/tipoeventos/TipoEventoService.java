@@ -1,4 +1,4 @@
-package es.ca.andresmontoro.semanasantaeventos.TipoEventos;
+package es.ca.andresmontoro.semanasantaeventos.tipoeventos;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

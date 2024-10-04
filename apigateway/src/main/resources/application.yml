@@ -24,7 +24,11 @@ spring:
           uri: lb://semanasanta-estadisticas
           predicates:
             - Path=/ssjerezana/estadisticas/**
-
+        
+        - id: semanasanta-eventos
+          uri: lb://semanasanta-eventos
+          predicates:
+            - Path=/ssjerezana/eventos/**
   # Configuration of API Gateway as a resource server
   security:
     oauth2:
@@ -40,6 +44,9 @@ springdoc:
         url: /aggregate/semanasanta-information/v3/api-docs
       - name: semanasanta-estadisticas
         url: /aggregate/semanasanta-estadisticas/v3/api-docs
+      - name: semanasanta-eventos
+        url: /aggregate/semanasanta-eventos/v3/api-docs
+      
 
 logging:
   level:

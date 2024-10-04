@@ -1,14 +1,8 @@
-package es.ca.andresmontoro.semanasantaeventos.Eventos;
+package es.ca.andresmontoro.semanasantaeventos.eventos;
 
-import java.time.LocalDateTime;
+import org.hibernate.validator.constraints.Range;
 
-import es.ca.andresmontoro.semanasantaeventos.TipoEventos.TipoEvento;
 import es.ca.andresmontoro.semanasantaeventos.validators.NoSpecialCharacters;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -17,17 +11,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
 @Setter
-public class Evento {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-
+public class EventoDTO {
   @NotNull(message = "El nombre del evento no puede ser nulo")
   @Size(min = 1, max = 128, message = "El nombre del evento debe tener entre 1 y 100 caracteres")
   @NoSpecialCharacters(message = "El nombre del evento no puede contener caracteres especiales")
@@ -42,9 +33,10 @@ public class Evento {
   private LocalDateTime fechaYHora;
 
   @NotNull(message = "La duración del evento no puede ser nula")
+  @Range(min = 1, message = "El id de la hermandad no puede ser menor que 1")
   private Long idHermandad;
 
-  @ManyToOne
   @NotNull(message = "El tipo de evento no puede ser nulo")
-  private TipoEvento tipoEvento;
+  @Range(min = 1, message = "El id del tipo de evento no puede ser menor que 1")
+  private Long idTipoEvento;
 }

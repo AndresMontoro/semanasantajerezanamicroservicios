@@ -1,4 +1,4 @@
-package es.ca.andresmontoro.semanasantaeventos.TipoEventos;
+package es.ca.andresmontoro.semanasantaeventos.tipoeventos;
 
 public class TipoEventoMapper {
   public static TipoEventoResponse toResponse(TipoEvento tipoEvento) {

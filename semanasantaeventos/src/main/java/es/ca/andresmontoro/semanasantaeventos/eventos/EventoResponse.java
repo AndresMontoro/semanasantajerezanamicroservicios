@@ -1,4 +1,4 @@
-package es.ca.andresmontoro.semanasantaeventos.Eventos;
+package es.ca.andresmontoro.semanasantaeventos.eventos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

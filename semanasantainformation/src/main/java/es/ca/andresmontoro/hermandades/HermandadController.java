@@ -1,5 +1,7 @@
 package es.ca.andresmontoro.hermandades;
 
+import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -32,6 +34,11 @@ public class HermandadController implements CrudController<Hermandad, Hermandad>
   @GetMapping
   public Page<Hermandad> getAll(Pageable pageable) {
     return hermandadService.findAll(pageable);
+  }
+
+  @GetMapping("/{id}")
+  public Optional<Hermandad> getById(Long id) {
+    return hermandadService.findById(id);
   }
 
   @Override

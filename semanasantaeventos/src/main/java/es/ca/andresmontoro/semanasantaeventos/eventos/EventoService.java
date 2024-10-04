@@ -1,11 +1,13 @@
-package es.ca.andresmontoro.semanasantaeventos.Eventos;
+package es.ca.andresmontoro.semanasantaeventos.eventos;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import es.ca.andresmontoro.semanasantaeventos.TipoEventos.TipoEvento;
-import es.ca.andresmontoro.semanasantaeventos.TipoEventos.TipoEventoService;
+import es.ca.andresmontoro.semanasantaeventos.hermandades.HermandadResponse;
+import es.ca.andresmontoro.semanasantaeventos.hermandades.HermandadService;
+import es.ca.andresmontoro.semanasantaeventos.tipoeventos.TipoEvento;
+import es.ca.andresmontoro.semanasantaeventos.tipoeventos.TipoEventoService;
 import es.ca.andresmontoro.semanasantaeventos.validators.Validator;
 import jakarta.persistence.EntityNotFoundException;
 
@@ -18,6 +20,7 @@ import lombok.AllArgsConstructor;
 public class EventoService {
   private final EventoRepository eventoRepository;
   private final TipoEventoService tipoEventoService;
+  private final HermandadService hermandadService;
 
   public Page<EventoResponse> findAll(Pageable pageable) {
     Page<Evento> eventos = eventoRepository.findAll(pageable);
@@ -36,6 +39,13 @@ public class EventoService {
     TipoEvento tipoEvento = tipoEventoService.findById(eventoDTO.getIdTipoEvento())
       .orElseThrow(() -> new IllegalArgumentException("Tipo de evento no encontrado"));
 
+    HermandadResponse hermandad = hermandadService
+      .getHermandadById(eventoDTO.getIdHermandad()).block();
+
+    if (hermandad == null) {
+      throw new IllegalArgumentException("Hermandad no encontrada");
+    }
+    
     Evento evento = EventoMapper.toEntity(eventoDTO, tipoEvento);
     return EventoMapper.toResponse(eventoRepository.save(evento));
   }

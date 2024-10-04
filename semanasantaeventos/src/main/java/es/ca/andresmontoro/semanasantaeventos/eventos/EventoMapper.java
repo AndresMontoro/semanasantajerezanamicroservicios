@@ -1,6 +1,6 @@
-package es.ca.andresmontoro.semanasantaeventos.Eventos;
+package es.ca.andresmontoro.semanasantaeventos.eventos;
 
-import es.ca.andresmontoro.semanasantaeventos.TipoEventos.TipoEvento;
+import es.ca.andresmontoro.semanasantaeventos.tipoeventos.TipoEvento;
 
 public class EventoMapper {
   public static EventoResponse toResponse(Evento evento) {
