@@ -21,6 +21,7 @@
     <module>discoveryserver</module>
     <module>apigateway</module>
     <module>semanasantaeventos</module>
+    <module>notifications</module>
   </modules>
     
   <properties>

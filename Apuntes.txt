@@ -16,3 +16,26 @@ Comando:
   3. Client Secret = Secret
   4. Credentials As Basic Auth Header (default)
   5. Solicitar Token y hacer solicitud a la API
+
+
+
+keycloak old configuration with another image:
+  # keycloak:
+  #   image: quay.io/keycloak/keycloak:25.0.6
+  #   restart: on-failure
+  #   command: start-dev
+  #   container_name: keycloak
+  #   environment:
+  #     KC_HOSTNAME: localhost
+  #     KC_HOSTNAME_STRICT_BACKCHANNEL: false
+  #     KC_HTTP_ENABLED: true
+  #     KC_HOSTNAME_STRICT_HTTPS: false
+  #     KC_HEALTH_ENABLED: true
+  #     KEYCLOAK_ADMIN: admin 
+  #     KEYCLOAK_ADMIN_PASSWORD: admin
+  #   ports:
+  #     - 8181:8080
+  #   volumes:
+  #     - ./volumes/keycloak:/opt/keycloak/data
+  #   networks:
+  #     - keycloak_network

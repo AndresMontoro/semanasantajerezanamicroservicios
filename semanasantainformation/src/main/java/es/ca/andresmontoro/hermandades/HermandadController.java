@@ -37,7 +37,7 @@ public class HermandadController implements CrudController<Hermandad, Hermandad>
   }
 
   @GetMapping("/{id}")
-  public Optional<Hermandad> getById(Long id) {
+  public Optional<Hermandad> getById(@PathVariable Long id) {
     return hermandadService.findById(id);
   }
 

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: notifications
+  kafka:
+    bootstrap-servers: localhost:9092
+
+server:
+  port: 8034
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:password@localhost:8761/eureka

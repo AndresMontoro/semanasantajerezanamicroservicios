@@ -16,7 +16,7 @@ public class HermandadService {
   public Mono<HermandadResponse> getHermandadById(Long id) {
     return webClientBuilder.build().get()
       .uri(
-        String.format("http://semanasanta-information/ssjerezana/informacion/hermandad/%d", id)
+        "http://semanasanta-information/ssjerezana/informacion/hermandad/{id}", id
       )
       .retrieve()
       .onStatus(

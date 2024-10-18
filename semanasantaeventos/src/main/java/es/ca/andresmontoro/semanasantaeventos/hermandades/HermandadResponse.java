@@ -14,6 +14,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class HermandadResponse {
+  private Long id;
+
   private String apodo;
 
   private String nombre;

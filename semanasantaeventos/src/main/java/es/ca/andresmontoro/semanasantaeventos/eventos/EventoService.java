@@ -2,6 +2,7 @@ package es.ca.andresmontoro.semanasantaeventos.eventos;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import es.ca.andresmontoro.semanasantaeventos.hermandades.HermandadResponse;
@@ -21,6 +22,7 @@ public class EventoService {
   private final EventoRepository eventoRepository;
   private final TipoEventoService tipoEventoService;
   private final HermandadService hermandadService;
+  private KafkaTemplate<String, EventoResponse> kafkaTemplate;
 
   public Page<EventoResponse> findAll(Pageable pageable) {
     Page<Evento> eventos = eventoRepository.findAll(pageable);
@@ -46,8 +48,15 @@ public class EventoService {
       throw new IllegalArgumentException("Hermandad no encontrada");
     }
     
-    Evento evento = EventoMapper.toEntity(eventoDTO, tipoEvento);
-    return EventoMapper.toResponse(eventoRepository.save(evento));
+    Evento eventoToCreate = EventoMapper.toEntity(eventoDTO, tipoEvento);
+    EventoResponse createdEvento = EventoMapper.toResponse(eventoRepository.save(eventoToCreate));
+
+    kafkaTemplate.send(
+      "new-events-notifications", 
+      createdEvento
+    );
+
+    return createdEvento;
   }
 
   public EventoResponse removeById(Long id) {

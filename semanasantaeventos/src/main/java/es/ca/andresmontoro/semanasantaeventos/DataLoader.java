@@ -8,8 +8,9 @@
 
 // // import es.ca.andresmontoro.semanasantaeventos.Eventos.Evento;
 // // import es.ca.andresmontoro.semanasantaeventos.Eventos.EventoRepository;
-// import es.ca.andresmontoro.semanasantaeventos.TipoEventos.TipoEvento;
-// import es.ca.andresmontoro.semanasantaeventos.TipoEventos.TipoEventoRepository;
+// import es.ca.andresmontoro.semanasantaeventos.tipoeventos.TipoEventoRepository;
+// import es.ca.andresmontoro.semanasantaeventos.tipoeventos.TipoEvento;
+
 // import lombok.AllArgsConstructor;
 
 // @Component
@@ -24,16 +25,16 @@
 //   }
 
 //   public void createTipoEvento() {
-//     System.out.println("Creando tipo de evento Extraordinaria");
+//     System.out.println("Creando tipo de evento Via Crucis");
 
 //     TipoEvento tipoEvento1 = TipoEvento.builder()
-//       .nombre("Extraordinaria")
+//       .nombre("Via Crucis")
 //       .build();
 
 //     tipoEventoRepository.save(tipoEvento1);
 
 //     TipoEvento tipoEventoRecuperado = tipoEventoRepository
-//       .findByNombre("Extraordinaria")
+//       .findByNombre("Via Crucis")
 //       .orElse(null);
 
 //     System.out.println("Evento recuperado: " + tipoEventoRecuperado.getNombre());
